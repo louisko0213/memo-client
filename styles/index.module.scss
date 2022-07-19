@@ -1,0 +1,66 @@
+.new-btn {
+  width: 80px;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  left: 70vw;
+  background-color: green;
+  color: #fff;
+}
+
+.memo-item {
+  width: 60%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 1px rgb(0 0 0 / 20%);
+  height: 200px;
+
+  h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .memo-content {
+    height: 90px;
+    width: 100%;
+    margin-top: 30px;
+
+    p {
+      width: 50%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+
+  .memo-date {
+    right: 20px;
+    bottom: 10px;
+  }
+}
+
+.lock {
+  margin-left: -25px;
+}
+
+.amend,
+.delete {
+  top: 30px;
+  cursor: pointer;
+}
+
+.amend {
+  right: 60px;
+}
+
+.delete {
+  right: 20px;
+}
+
+.blank {
+  font-size: 1.5rem;
+  margin-top: 20%;
+}

@@ -1,0 +1,49 @@
+.back {
+    margin-left: 30px;
+    width: 90px;
+}
+
+.create {
+    width: 60%;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 1px rgb(0 0 0 / 20%);
+}
+
+.create-wrap {
+    padding: 30px;
+    margin: 0 auto;
+
+    >div {
+        display: flex;
+        margin: 30px;
+        min-height: 30px;
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .label {
+        width: 150px;
+    }
+
+    input:not([type="radio"]),
+    textarea {
+        width: 500px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+}
+
+.alert {
+    margin-left: 14vw;
+}
+
+.create-btn {
+    width: 70px;
+    margin: 0 auto;
+}
