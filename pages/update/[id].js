@@ -12,20 +12,8 @@ export default function Update({ memoData }) {
     )
 };
 
-export const getStaticPaths = async () => {
-    const res = await getMemoListApi();
-    const paths = await res.map(memo => ({
-        params: { id: memo.id.toString() }
-    }));
-
-    return {
-        paths,
-        fallback: false
-    }
-}
-
-export const getStaticProps = async ({ params }) => {
-    const memoData = await getMemoListByIdApi(params.id);
+export const getServerSideProps = async ({ resolvedUrl }) => {
+    const memoData = await getMemoListByIdApi(resolvedUrl.split('/')[2]);
 
     return {
         props: {

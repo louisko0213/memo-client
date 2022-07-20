@@ -1,7 +1,6 @@
 import Axios from 'axios';
 
 const url = 'https://louis-todo-list-backend.herokuapp.com';
-// const url = 'http://localhost:3002'
 
 export const getMemoListApi = async () => {
     return Axios.get(`${url}/fetch`)

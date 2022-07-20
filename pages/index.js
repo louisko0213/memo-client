@@ -22,7 +22,7 @@ export default function Home({ memoData }) {
       setNeedPassword(true);
       setModalType('update');
     } else {
-      router.push(`/update/${id}`);
+      router.push('/update/[id]', `/update/${id}`);
     }
   }
 
