@@ -14,7 +14,7 @@ export default function Update({ memoData }) {
 
 export const getStaticPaths = async () => {
     const res = await getMemoListApi();
-    const paths = res.map(memo => ({
+    const paths = await res.map(memo => ({
         params: { id: memo.id.toString() }
     }));
 

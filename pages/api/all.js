@@ -1,17 +1,20 @@
 import Axios from 'axios';
 
+const url = 'https://louis-todo-list-backend.herokuapp.com';
+// const url = 'http://localhost:3002'
+
 export const getMemoListApi = async () => {
-    return Axios.get('https://louis-todo-list-backend.herokuapp.com/fetch')
+    return Axios.get(`${url}/fetch`)
         .then(response => response.data);
 }
 
 export const getMemoListByIdApi = async (id) => {
-    return Axios.get(`https://louis-todo-list-backend.herokuapp.com/fetch/${id}`)
+    return Axios.get(`${url}/fetch/${id}`)
         .then(response => response.data);
 }
 
 export const createMemoApi = (title, content, password, date) => {
-    Axios.post('https://louis-todo-list-backend.herokuapp.com/create', {
+    Axios.post(`${url}/create`, {
         title,
         content,
         password,
@@ -22,7 +25,7 @@ export const createMemoApi = (title, content, password, date) => {
 }
 
 export const updateMemoApi = (id, title, content, password, date) => {
-    Axios.put(`https://louis-todo-list-backend.herokuapp.com/update/${id}`, {
+    Axios.put(`${url}/update/${id}`, {
         id,
         title,
         content,
@@ -34,14 +37,14 @@ export const updateMemoApi = (id, title, content, password, date) => {
 }
 
 export const deleteMemoApi = (id) => {
-    Axios.delete(`https://louis-todo-list-backend.herokuapp.com/delete/${id}`)
+    Axios.delete(`${url}/delete/${id}`)
         .then((response) => {
             console.log(response.data);
         })
 }
 
 export const checkPasswordApi = (id, password) => {
-    return Axios.get(`https://louis-todo-list-backend.herokuapp.com/check/${id}`,
+    return Axios.get(`${url}/check/${id}`,
         {
             params: { password }
         }
