@@ -10,6 +10,7 @@ a {
   color: inherit;
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 
 * {
@@ -19,6 +20,14 @@ a {
 h1 {
   margin: 0;
   padding: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.margin-center {
+  margin: 0 auto;
 }
 
 .text-center {
@@ -41,12 +50,21 @@ h1 {
   margin-left: 20px;
 }
 
+.mb-1 {
+  margin-bottom: 10px;
+}
+
 .red {
   color: red;
 }
 
 .gray {
   color: gray;
+}
+
+.blue {
+  color: blue;
+  cursor: pointer;
 }
 
 .positionr {
@@ -72,8 +90,10 @@ h1 {
   text-align: center;
   background-color: green;
   color: #fff;
+  font-size: 13px;
 }
 
 .container {
   padding-top: 30px;
+  min-height: 100vh;
 }

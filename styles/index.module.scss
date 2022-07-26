@@ -1,16 +1,24 @@
-.new-btn {
-  width: 80px;
-  font-size: 13px;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  left: 70vw;
-  background-color: green;
-  color: #fff;
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+
+  .buttons {
+    display: flex;
+    right: 0;
+
+    a {
+      width: 80px;
+      margin: 5px;
+    }
+
+    a:not(.new) {
+      background-color: rgb(140, 140, 140);
+    }
+  }
 }
 
 .memo-item {
-  width: 60%;
+  width: 80%;
   margin: 10px auto;
   padding: 20px;
   border-radius: 10px;

@@ -1,14 +1,16 @@
 import styles from '../styles/create.module.scss';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { createMemoApi, updateMemoApi } from '../pages/api/all';
+import { createMemoApi, updateMemoApi } from '../pages/api/memo';
 import { formatDate } from '../lib/utils';
 import { useRouter } from 'next/router';
+import { getCookie } from 'cookies-next';
 
 export default function Common(props) {
     const router = useRouter();
     const pathname = router.pathname.split('/');
     const head = pathname[1] === 'update' ? '修改' : '新增';
+    const user = getCookie('user');
     const [title, setTitle] = useState(props.title || '');
     const [content, setContent] = useState(props.content || '');
     const [needPassword, setNeedPassword] = useState(props.password ? true : false);
@@ -34,7 +36,7 @@ export default function Common(props) {
 
     const clickBtn = async () => {
         if (title && content && checkPassword()) {
-            if (pathname[1] === 'create') await createMemoApi(title, content, password2, date);
+            if (pathname[1] === 'create') await createMemoApi(title, content, password2, date, user);
             if (pathname[1] === 'update') await updateMemoApi(props.id, title, content, password2, date);
             router.push('/');
         } else {
@@ -128,10 +130,6 @@ export default function Common(props) {
                             }
                         </>
                     }
-                    <div>
-                        <label className={styles.label}>日期：</label>
-                        <p dangerouslySetInnerHTML={{ __html: date }}></p>
-                    </div>
                     <a
                         className={`${styles['create-btn']} btn fz-13`}
                         onClick={clickBtn}

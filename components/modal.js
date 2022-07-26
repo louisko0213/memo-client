@@ -1,8 +1,8 @@
 import styles from '../styles/modal.module.scss';
-import { checkPasswordApi } from '../pages/api/all';
+import { checkPasswordApi } from '../pages/api/memo';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { deleteMemoApi } from '../pages/api/all';
+import { deleteMemoApi } from '../pages/api/memo';
 
 export default function Modal(props) {
     const router = useRouter();

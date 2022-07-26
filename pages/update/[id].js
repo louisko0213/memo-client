@@ -1,5 +1,5 @@
 import Common from "../../components/common";
-import { getMemoListApi, getMemoListByIdApi } from "../api/all";
+import { getMemoListByIdApi } from "../api/memo";
 
 export default function Update({ memoData }) {
     return (
